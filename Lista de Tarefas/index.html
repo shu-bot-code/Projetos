@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Lista de Tarefas</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header>
+    <h1>Lista de Tarefas</h1>
+    <button id="enable-notifications">Ativar Notificações</button>
+  </header>
+
+  <!-- Filtro e busca -->
+  <section class="filters">
+    <div class="left">
+      <label for="filter-status">Filtrar por status:</label>
+      <select id="filter-status">
+        <option value="all">Todas</option>
+        <option value="pending">Pendentes</option>
+        <option value="doing">Em Progresso</option>
+        <option value="done">Concluídas</option>
+      </select>
+
+      <label for="search-input">Buscar:</label>
+      <input type="text" id="search-input" placeholder="Texto da tarefa..." />
+    </div>
+    <div class="right">
+      <button id="show-log">Ver Log de Alterações</button>
+    </div>
+  </section>
+
+  <!-- Kanban (3 colunas) -->
+  <section class="kanban">
+    <div class="kanban-column" data-status="pending" id="col-pending">
+      <h2>Pendentes</h2>
+      <ul id="pending-tasks" class="task-list"></ul>
+    </div>
+    <div class="kanban-column" data-status="doing" id="col-doing">
+      <h2>Em Progresso</h2>
+      <ul id="doing-tasks" class="task-list"></ul>
+    </div>
+    <div class="kanban-column" data-status="done" id="col-done">
+      <h2>Concluídas</h2>
+      <ul id="done-tasks" class="task-list"></ul>
+    </div>
+  </section>
+
+  <!-- Formulário Nova Tarefa -->
+  <section class="new-task">
+    <h2>Nova Tarefa</h2>
+    <form id="task-form">
+      <input 
+        type="text" 
+        id="task-title" 
+        placeholder="Título da tarefa" 
+        required 
+      />
+      <textarea 
+        id="task-desc" 
+        placeholder="Descrição..." 
+      ></textarea>
+      <div class="form-group">
+        <label for="task-date">Data de Vencimento:</label>
+        <input type="date" id="task-date" />
+      </div>
+      <div class="form-group">
+        <label for="task-responsible">Responsável:</label>
+        <input 
+          type="text" 
+          id="task-responsible" 
+          placeholder="Nome ou e-mail"
+        />
+      </div>
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+  </section>
+
+  <!-- Modal de Edição -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="edit-modal">
+      <h2>Editar Tarefa</h2>
+      <form id="edit-form">
+        <input type="text" id="edit-title" required />
+        <textarea id="edit-desc"></textarea>
+        <div class="form-group">
+          <label for="edit-date">Data de Vencimento:</label>
+          <input type="date" id="edit-date" />
+        </div>
+        <div class="form-group">
+          <label for="edit-responsible">Responsável:</label>
+          <input 
+            type="text" 
+            id="edit-responsible" 
+          />
+        </div>
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancel-edit">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Log -->
+  <div class="modal-overlay" id="log-overlay">
+    <div class="modal" id="log-modal">
+      <h2>Histórico de Alterações</h2>
+      <ul id="log-list"></ul>
+      <button id="close-log">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+
+  <section class="integrations">
+    <button id="sync-google-calendar">Sincronizar com Google Calendar</button>
+    <button id="sync-trello">Sincronizar com Trello</button>
+  </section>
+
+</body>
+</html>

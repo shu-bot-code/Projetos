@@ -1,0 +1,248 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* BODY */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* HEADER */
+  header {
+    background: #673ab7;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  #enable-notifications {
+    background: #9575cd;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  #enable-notifications:hover {
+    background: #866dc2;
+  }
+  
+  /* FILTROS */
+  .filters {
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .filters .left,
+  .filters .right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  #filter-status {
+    padding: 0.3rem;
+  }
+  #search-input {
+    padding: 0.3rem;
+  }
+  #show-log {
+    background: #e0e0e0;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  #show-log:hover {
+    background: #ccc;
+  }
+  
+  /* KANBAN */
+  .kanban {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1; /* crescer para ocupar espaço */
+    padding: 1rem;
+  }
+  .kanban-column {
+    background: #fff;
+    flex: 1;
+    border-radius: 5px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  .kanban-column h2 {
+    background: #ddd;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+  }
+  .task-list {
+    list-style: none;
+    padding: 0.5rem;
+    flex: 1;
+  }
+  .task-list li {
+    background: #fafafa;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .task-list li:active {
+    cursor: grabbing;
+  }
+  .task-header {
+    font-weight: bold;
+  }
+  .task-footer {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* BOTÕES NA LISTA (opcional) */
+  .task-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  .action-btn {
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  .edit-btn {
+    background: #ffca28;
+    color: #333;
+  }
+  .delete-btn {
+    background: #e53935;
+    color: #fff;
+  }
+  .edit-btn:hover {
+    background: #ffc107;
+  }
+  .delete-btn:hover {
+    background: #d32f2f;
+  }
+  
+  /* NOVA TAREFA */
+  .new-task {
+    background: #fff;
+    padding: 1rem;
+  }
+  #task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #task-title,
+  #task-desc,
+  #task-date,
+  #task-responsible {
+    width: 100%;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  #task-desc {
+    resize: vertical;
+  }
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #task-form button {
+    width: 150px;
+    padding: 0.5rem;
+    border: none;
+    background: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  #task-form button:hover {
+    background: #43a047;
+  }
+  
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .modal {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+  }
+  .modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .modal-overlay.show {
+    display: flex;
+  }
+  
+  /* LOG MODAL */
+  #log-overlay .modal {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  #log-list {
+    list-style: none;
+    padding: 0;
+  }
+  #log-list li {
+    background: #f1f1f1;
+    margin: 0.3rem 0;
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  #close-log {
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    border: none;
+    background: #757575;
+    color: #fff;
+    border-radius: 3px;
+  }
+  #close-log:hover {
+    background: #616161;
+  }
+  

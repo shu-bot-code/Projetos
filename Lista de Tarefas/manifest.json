@@ -1,0 +1,16 @@
+{
+    "name": "Lista de Tarefas Avançada",
+    "short_name": "Tarefas",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f4f4f4",
+    "theme_color": "#673ab7",
+    "icons": [
+      {
+        "src": "https://cdn-icons-png.flaticon.com/512/3157/3157300.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
