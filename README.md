@@ -11,16 +11,16 @@
 <li>
 <b>Nome:</b>Wallyson Schumacher</li>
 <li>
-<b>Curso:</b> Analise e desenvolvimento de sistemas
+<b>Formado em:</b> Análise e Desenvolvimento de Sistemas
 </li>
 <li>
-<b>Paixões:</b> Programar, desenvolver e jogar
+<b>Paixões:</b> Programar e me desenvolver
 </li>
 <li>
 <b>Gênero:</b> Masculino
 </li>
 <li>
-<b>Hobbys:</b> Coisas de tecnologia, Design Gráfico, Desenvolvimento Web
+<b>Hobbys:</b> Tecnologia, Design Gráfico e Desenvolvimento Web
 </li>
 <li>
 <b>Trabalho @:</b> Freelancer | Shumatsu Design
